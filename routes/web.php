@@ -20,8 +20,9 @@ Route::middleware('auth')->group(function () {
 // User Type = Admin
 Route::middleware('auth')->group(function () {
     Route::get('/admin/dashboard', [HomeController::class, 'home'])->name('admin.dashboard');
-    Route::get('/admin/profile', [AdminProfileController::class, 'index'])->name('admin.profile');
-    Route::get('/admin/profile/edit', [AdminProfileController::class, 'edit'])->name('admin.profile.edit');
+    Route::get('/admin/profile', [AdminProfileController::class, 'adminProfile'])->name('admin.profile');
+    Route::get('/admin/profile/edit', [AdminProfileController::class, 'editProfile'])->name('admin.profile.edit');
+    Route::post('/admin/profile/imageUpload/{id}', [AdminProfileController::class, 'imageUpload'])->name('admin.profile.imageUpload');
 });
 // User Type = Admin
 
