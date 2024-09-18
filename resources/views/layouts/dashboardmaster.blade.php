@@ -18,6 +18,8 @@
 
     <!-- Head Js -->
     <script src="{{ asset('backend_assets') }}/js/head.js"></script>
+
+    @vite('resources/css/app.css')
 </head>
 
 <body>

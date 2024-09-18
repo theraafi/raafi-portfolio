@@ -17,6 +17,7 @@
         <script defer src="{{ asset('admin_backend_assets') }}/js/popper.min.js"></script>
         <script defer src="{{ asset('admin_backend_assets') }}/js/tippy-bundle.umd.min.js"></script>
         <script defer src="{{ asset('admin_backend_assets') }}/js/sweetalert.min.js"></script>
+        @vite('resources/css/app.css')
     </head>
 
     <body
@@ -593,6 +594,15 @@
                                         </svg>
                                     </button>
                                 </div>
+
+
+                                {{-- Frontnd Viewer Button --}}
+                                <div class="mr-5">
+                                    <a href="{{ route('index') }}" target="_blank" type="button" class="btn btn-success">Visti Website</a>
+                                </div>
+                                {{-- Frontnd Viewer Button --}}
+
+
                                 <div>
                                     <a
                                         href="javascript:;"
@@ -638,6 +648,9 @@
                                             />
                                         </svg>
                                     </a>
+
+
+
                                     <a
                                         href="javascript:;"
                                         x-cloak
@@ -694,9 +707,13 @@
                                     >
                                         <li>
                                             <div class="flex items-center px-4 py-4">
+
                                                 <div class="flex-none">
+
                                                     <img class="h-10 w-10 rounded-md object-cover" src="{{ asset('admin_backend_assets') }}/images/user-profile.jpeg" alt="image" />
+
                                                 </div>
+
                                                 <div class="truncate ltr:pl-4 rtl:pr-4">
                                                     <h4 class="text-base">
                                                         {{ Auth::user()->name }}<span class="rounded bg-success-light px-1 text-xs text-success ltr:ml-2 rtl:ml-2">{{ Auth::user()->usertype }}</span>
