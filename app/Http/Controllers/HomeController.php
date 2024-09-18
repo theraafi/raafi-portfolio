@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class HomeController extends Controller
 {
     public function home(){
-        $users = Auth::user();
+        $users = User::find(Auth::user());
         return view("admin.home", compact('users'));
     }
 
