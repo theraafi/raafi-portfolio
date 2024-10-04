@@ -20,7 +20,7 @@ class FrontendProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('frontend.frontend_profile.create');
     }
 
     /**
@@ -28,7 +28,22 @@ class FrontendProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            // 'logo' => 'required|image|mimes:jpeg,png,jpg,gif|max:1024',
+            'description' => 'required',
+        ]);
+
+        $newProfile = new FrontendProfile();
+        $newProfile->name = $request->name;
+        $newProfile->email = $request->email;
+        $newProfile->phone = $request->phone;
+        $newProfile->save();
+
+        
     }
 
     /**

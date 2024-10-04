@@ -375,7 +375,7 @@
                                     <a href="{{ route('admin.frontend_profile.view') }}" class="active"> View Profile </a>
                                 </li>
                                 <li>
-                                    <a href="analytics.html">Analytics</a>
+                                    <a href="{{ route('admin.frontend_profile.create') }}"> Create Profile </a>
                                 </li>
                                 <li>
                                     <a href="finance.html">Finance</a>
@@ -586,7 +586,7 @@
                                 <a href="#" class="group relative" @click="toggle()">
                                     <span><img
                                             class="h-9 w-9 rounded-full object-cover saturate-50 group-hover:saturate-100"
-                                            src="{{ asset('admin_backend_assets') }}/images/user-profile.jpeg"
+                                            src="{{ Storage::url(Auth::user()->user_image) }}"
                                             alt="image" /></span>
                                 </a>
                                 <ul x-cloak x-show="open" x-transition x-transition.duration.300ms

@@ -30,6 +30,8 @@ Route::middleware('auth')->group(function () {
     // Route::post('/admin/webview_profile/store_profile', [WebviewProfileController::class, 'store_profile'])->name('admin.webview_profile.store_profile');
 
     Route::get('admin/frontend_profile/view', [FrontendProfileController::class, 'index'])->name('admin.frontend_profile.view');
+    Route::get('admin/frontend_profile/create', [FrontendProfileController::class, 'create'])->name('admin.frontend_profile.create');
+    Route::post('admin/frontend_profile/store', [FrontendProfileController::class, 'store'])->name('admin.frontend_profile.store');
 
 });
 // User Type = Admin
