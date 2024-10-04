@@ -11,7 +11,7 @@
             </li>
         </ul>
         <div class="pt-5">
-            <div class="mb-5 grid grid-cols-10">
+            <div class="mb-5 grid grid-cols-1">
                 <div class="panel">
                     <div class="mb-5 flex items-center justify-between">
                         <h5 class="text-lg font-semibold dark:text-white-light">Profile</h5>
@@ -33,7 +33,7 @@
                     <div class="mb-5">
                         <div class="flex flex-col items-center justify-center">
                             <a href="">
-                                <img src="{{ asset('admin_backend_assets') }}/images/profile-34.jpeg" alt="image"
+                                <img src="{{ Storage::url($user->user_image) }}" alt="image"
                                 class="mb-5 h-24 w-24 rounded-full object-cover" />
                             </a>
                             <p class="text-xl font-semibold text-primary"> {{ Auth::user()->name }} </p>

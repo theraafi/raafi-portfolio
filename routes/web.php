@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\{AdminProfileController, ProfileController, HomeController, WebviewProfileController};
-use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\{AdminProfileController, ProfileController, HomeController, WebviewProfileController, FrontendController, FrontendProfileController};
 use Illuminate\Support\Facades\Route;
 
 
@@ -27,7 +26,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/profile/imageUpload/{id}', [AdminProfileController::class, 'imageUpload'])->name('admin.profile.imageUpload');
 
     // Webview Profile
-    Route::get('/admin/webview_profile/create', [WebviewProfileController::class, 'webviewProfile'])->name('admin.webview_profile.create');
+    // Route::get('/admin/webview_profile/create', [WebviewProfileController::class, 'webviewProfile'])->name('admin.webview_profile.create');
+    // Route::post('/admin/webview_profile/store_profile', [WebviewProfileController::class, 'store_profile'])->name('admin.webview_profile.store_profile');
+
+    Route::get('admin/frontend_profile/view', [FrontendProfileController::class, 'index'])->name('admin.frontend_profile.view');
+
 });
 // User Type = Admin
 

@@ -31,7 +31,7 @@ class AdminProfileController extends Controller
         $userImg = User::find(Auth::id());
         $path = $userImg->user_image;
         Storage::delete($path);
-        
+
         $request->validate([
             'user_image' => 'required|mimes:png,jpg,jpeg,gif,webp|max:2048',
         ]);
